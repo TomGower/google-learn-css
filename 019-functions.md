@@ -62,4 +62,46 @@ Similar to `polygon()`, `path()` takes an SVG fill rule as an argument. This all
 
 ## Transforms
 
-TK.
+All of these functions are used with `transform`.
+
+### Rotation
+
+You can rotate an element using `rotate()`, which will rotate an element on its center axis. Alternatively, `rotateX()`, `rotateY()`, and `rotateZ()` to rotate on a specific axis. These functions accept degree, turn, and radian units for the level of rotation. Example:
+
+```CSS
+.my-element {
+  transform: rotateX(10deg) rotateY(10deg) rotateZ(10deg);
+}
+```
+
+`rotate3d()` takes four arguments. The first three numbers are the X, Y, and Z coordinates. The fourth is the rotation, and can be in degree, turn, or radian units. Example: `rotate3d(1, 1, 1, 10deg);`.
+
+### Scale
+
+`scale()` combined with `transform` lets you change the scaling of an element. It accepts one or two numbers as a value which determine a positive or negative scaling. With just one number argument, both X and Y axes will be scaled the same according to the shorthand value. Similar to `rotate()`, you can specify `scaleX()`, `scaleY()`, and `scaleZ()`. Example:
+
+```CSS
+.my-element {
+  transform: scaleX(1.2) scaleY(1.2);
+}
+```
+
+There is also a `scale3d()` function. It takes three arguments, the X, Y, and Z scale factors.
+
+### Translate
+
+`translate()` moves an element while it maintains its position in the document flow. It accepts length and percentage values as arguments. It translates an element along the X axis if one argument is passed, and translates an element along the X and Y axes if both arguments are passed. Example: `transform: translatex(40px) translatey(25px);`. (`translate()` = move).
+
+Like `rotate()` and `scale()`, there is also `translateX()`, `translateY()`, and `translateZ()`, and also `translate3d()`, which accepts the X, Y, and Z as arguments in one function.
+
+### Skewing
+
+`skew()` lets you skew an element. It accepts angles as functions. It works similarly to `translate()`. It accepts one or two arguments. With one argument, it will only affect the X axis. With both arguments, the first value affects the X axis and the second the Y axis. `skewX()` and `skewY()` can be used if you only want to affect one axis. Example: `transform: skew(10deg);`.
+
+### Perspective
+
+`perspective()` will alter the distance between the user and the Z plane. This gives us the feeling of distance and can be used to create depth of field in your designs. (They have a supposedly cool design. My brain doesn't process it as 3D.)
+
+### Animation functions, gradients, and filters
+
+These each get their own module.
